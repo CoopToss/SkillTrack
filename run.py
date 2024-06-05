@@ -5,8 +5,9 @@ app = Flask(__name__)
 
 @app.route('/js/<path:path>')
 def send_js(path):
-    return send_from_directory('app/static/css/js', path, mimetype='application/javascript')
+    return send_from_directory('static/js', path, mimetype='application/javascript')
 
 app.secret_key = 'cooperwashere'
+
 if __name__ == '__main__':
     app.run(debug=True)
